@@ -24,4 +24,7 @@ public class Grocery {
 
     }
 
+    public void removeGroceryItem(int position) {
+        String item = groceryList.get(position);
+    }
 }
