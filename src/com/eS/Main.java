@@ -21,7 +21,6 @@ public class Main {
                 case 1:
                     printInstructions();
                     break;
-                ;
                 case 2:
                     groceryList.printGroceryList();
                     break;
@@ -70,6 +69,13 @@ public class Main {
         System.out.println("Enter replacement item: ");
         String newItem = scanner.nextLine();
         groceryList.modifyGroceryItem(intNumber-1, newItem);
+    }
+
+    public static void removeItem() {
+        System.out.println("Please select item number to remove: ");
+        int intNumber = scanner.nextInt();
+        scanner.nextLine();
+        groceryList.removeGroceryItem(intNumber);
     }
 
 }
