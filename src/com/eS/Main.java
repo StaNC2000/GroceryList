@@ -57,4 +57,9 @@ public class Main {
         System.out.println("\t 0 To quit the application.");
     }
 
+    public static void addItem() {
+        System.out.println("Please enter the grocery item: ");
+        String item = scanner.nextLine();
+        groceryList.addGroceryItem(item);
+    }
 }
