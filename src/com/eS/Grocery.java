@@ -17,4 +17,11 @@ public class Grocery {
             System.out.println((i + 1) + ". " + groceryList.get(i));
         }
     }
+
+    public void modifyGroceryItem(int position, String item) {
+        groceryList.set(position, item);
+        System.out.println("Grocery item " + (position + 1) + " has been modified");
+
+    }
+
 }
