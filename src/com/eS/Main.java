@@ -63,25 +63,23 @@ public class Main {
     }
 
     public static void modifyItem() {
-        System.out.println("Please select item number to modify: ");
-        int intNumber = scanner.nextInt();
-        scanner.nextLine();
+        System.out.println("Please select item name to modify: ");
+        String itemNumber = scanner.nextLine().toUpperCase();
         System.out.println("Enter replacement item: ");
         String newItem = scanner.nextLine().toUpperCase();
-        groceryList.modifyGroceryItem(intNumber-1, newItem);
+        groceryList.modifyGroceryItem(itemNumber, newItem);
     }
 
     public static void removeItem() {
-        System.out.println("Please select item number to remove: ");
-        int intNumber = scanner.nextInt();
-        scanner.nextLine();
-        groceryList.removeGroceryItem(intNumber - 1);
+        System.out.println("Please enter name item to remove: ");
+        String itemNumber = scanner.nextLine().toUpperCase();
+        groceryList.removeGroceryItem(itemNumber);
     }
 
     public static void searchItem() {
         System.out.println("Please enter item to search for: ");
         String searchItem = scanner.nextLine().toUpperCase();
-        if (groceryList.findItem(searchItem.toUpperCase()) != null) {
+        if (groceryList.onFile(searchItem.toUpperCase())) {
             System.out.println("Found " + searchItem + " in our grocery list.");
         }
         else {
