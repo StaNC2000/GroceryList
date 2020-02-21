@@ -9,10 +9,10 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        boolean quit = false;
+        boolean run = true;
         int choice = 0;
 
-        while (!quit) {
+        while (run) {
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine();
@@ -37,7 +37,7 @@ public class Main {
                     searchItem();
                     break;
                 case 0:
-                    quit = false;
+                    run = false;
                     System.out.println("Bye, Bye");
                     break;
 
@@ -59,7 +59,7 @@ public class Main {
     public static void addItem() {
         System.out.println("Please enter the grocery item: ");
         String item = scanner.nextLine();
-        groceryList.addGroceryItem(item);
+        groceryList.addGroceryItem(item.toUpperCase());
     }
 
     public static void modifyItem() {
@@ -67,7 +67,7 @@ public class Main {
         int intNumber = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Enter replacement item: ");
-        String newItem = scanner.nextLine();
+        String newItem = scanner.nextLine().toUpperCase();
         groceryList.modifyGroceryItem(intNumber-1, newItem);
     }
 
@@ -75,13 +75,13 @@ public class Main {
         System.out.println("Please select item number to remove: ");
         int intNumber = scanner.nextInt();
         scanner.nextLine();
-        groceryList.removeGroceryItem(intNumber);
+        groceryList.removeGroceryItem(intNumber - 1);
     }
 
     public static void searchItem() {
         System.out.println("Please enter item to search for: ");
-        String searchItem = scanner.nextLine();
-        if (groceryList.findItem(searchItem) != null) {
+        String searchItem = scanner.nextLine().toUpperCase();
+        if (groceryList.findItem(searchItem.toUpperCase()) != null) {
             System.out.println("Found " + searchItem + " in our grocery list.");
         }
         else {

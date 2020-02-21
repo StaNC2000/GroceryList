@@ -19,7 +19,7 @@ public class Grocery {
     }
 
     public void modifyGroceryItem(int position, String item) {
-        groceryList.set(position, item);
+        groceryList.set(position, item.toUpperCase());
         System.out.println("Grocery item " + (position + 1) + " has been modified");
 
     }
@@ -30,9 +30,9 @@ public class Grocery {
     }
 
     public String findItem(String searchItem) {
-        boolean exists = groceryList.contains(searchItem);
-        int position = groceryList.indexOf(searchItem);
-        if (position > 0) {
+//        boolean exists = groceryList.contains(searchItem);
+        int position = groceryList.indexOf(searchItem.toUpperCase());
+        if (position >= 0) {
             return groceryList.get(position);
         }
 
