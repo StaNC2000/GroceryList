@@ -1,5 +1,6 @@
 package com.eS;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -85,5 +86,13 @@ public class Main {
         else {
             System.out.println(searchItem + " is not in the grocery list.");
         }
+    }
+
+    public static void processArrayList() {
+        ArrayList<String> newArray = new ArrayList<>();
+        newArray.addAll(groceryList.getGroceryList());
+
+        // ArrayList<String> nextArray = new ArrayList<>(groceryList.getGroceryList()); // another version
+
     }
 }
